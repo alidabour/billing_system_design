@@ -1,4 +1,4 @@
-![Image of compontents](https://github.com/alidabour/billing_system_design/design.png)
+![Image of compontents](https://raw.githubusercontent.com/alidabour/billing_system_design/master/design.png)
 
 - **Payment Service** listen on **Payment Requests Topic** on receiving a message it will fetch user credit card info from its DB and prepare and publish a message on **Payment   Gateway Topic**.
 - **Subscription Service** store user subscriptionsdata. Will have a daily  job to start payment process by publishing message to **Payment Requests Topic** .
@@ -87,8 +87,8 @@ Invoice Service->>Client: Redirect to the file URL
 **Company Products ask for active user**
 ```mermaid
 sequenceDiagram
-Company Products -->> Activator Service: Is user X blocked.
-Note right of Activator Service: Check DB if user exist.
+Company Products -->> Activator Service: Is user X blocked?.
+Note right of Activator Service: Check DB if user is blocked.
 Activator Service ->> Company Products: Yes he is.
 ```
 
